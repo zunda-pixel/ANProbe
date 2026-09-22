@@ -1,0 +1,789 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EC1010030615BD000770758 /* ATSSecurity.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 2EB1010030615BD000770758 /* ATSSecurity.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2EC2010030615BD000770758 /* ATSTransport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 2EB2010030615BD000770758 /* ATSTransport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2EC3010030615BD000770758 /* ATSDataProvider.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 2EB3010030615BD000770758 /* ATSDataProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2ED1020030615BD000770758 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E491D4030615BCF00770758 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EB1030030615BD000770758;
+			remoteInfo = ATSSecurity;
+		};
+		2ED2020030615BD000770758 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E491D4030615BCF00770758 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EB2030030615BD000770758;
+			remoteInfo = ATSTransport;
+		};
+		2ED3020030615BD000770758 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E491D4030615BCF00770758 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EB3030030615BD000770758;
+			remoteInfo = ATSDataProvider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2ED0010030615BD000770758 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolder = Product;
+			files = (
+				2EC1010030615BD000770758 /* ATSSecurity.appex in Embed ExtensionKit Extensions */,
+				2EC2010030615BD000770758 /* ATSTransport.appex in Embed ExtensionKit Extensions */,
+				2EC3010030615BD000770758 /* ATSDataProvider.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2E491D4830615BCF00770758 /* ANProbe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANProbe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB1010030615BD000770758 /* ATSSecurity.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ATSSecurity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB2010030615BD000770758 /* ATSTransport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ATSTransport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EB3010030615BD000770758 /* ATSDataProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ATSDataProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2EAA010030615BD000770758 /* Exceptions for "ANProbe" folder in "ANProbe" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2E491D4730615BCF00770758 /* ANProbe */;
+		};
+		2EB10A0030615BD000770758 /* Exceptions for "ATSSecurity" folder in "ATSSecurity" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2EB1030030615BD000770758 /* ATSSecurity */;
+		};
+		2EB20A0030615BD000770758 /* Exceptions for "ATSTransport" folder in "ATSTransport" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2EB2030030615BD000770758 /* ATSTransport */;
+		};
+		2EB30A0030615BD000770758 /* Exceptions for "ATSDataProvider" folder in "ATSDataProvider" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2EB3030030615BD000770758 /* ATSDataProvider */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2E491D4A30615BCF00770758 /* ANProbe */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2EAA010030615BD000770758 /* Exceptions for "ANProbe" folder in "ANProbe" target */,
+			);
+			path = ANProbe;
+			sourceTree = "<group>";
+		};
+		2EB1020030615BD000770758 /* ATSSecurity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2EB10A0030615BD000770758 /* Exceptions for "ATSSecurity" folder in "ATSSecurity" target */,
+			);
+			path = ATSSecurity;
+			sourceTree = "<group>";
+		};
+		2EB2020030615BD000770758 /* ATSTransport */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2EB20A0030615BD000770758 /* Exceptions for "ATSTransport" folder in "ATSTransport" target */,
+			);
+			path = ATSTransport;
+			sourceTree = "<group>";
+		};
+		2EB3020030615BD000770758 /* ATSDataProvider */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2EB30A0030615BD000770758 /* Exceptions for "ATSDataProvider" folder in "ATSDataProvider" target */,
+			);
+			path = ATSDataProvider;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E491D4530615BCF00770758 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		2EB1050030615BD000770758 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		2EB2050030615BD000770758 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		2EB3050030615BD000770758 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E491D3F30615BCF00770758 = {
+			isa = PBXGroup;
+			children = (
+				2E491D4A30615BCF00770758 /* ANProbe */,
+				2EB1020030615BD000770758 /* ATSSecurity */,
+				2EB2020030615BD000770758 /* ATSTransport */,
+				2EB3020030615BD000770758 /* ATSDataProvider */,
+				2E491D4930615BCF00770758 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E491D4930615BCF00770758 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E491D4830615BCF00770758 /* ANProbe.app */,
+				2EB1010030615BD000770758 /* ATSSecurity.appex */,
+				2EB2010030615BD000770758 /* ATSTransport.appex */,
+				2EB3010030615BD000770758 /* ATSDataProvider.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E491D4730615BCF00770758 /* ANProbe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E491D5330615BD000770758 /* Build configuration list for PBXNativeTarget "ANProbe" */;
+			buildPhases = (
+				2E491D4430615BCF00770758 /* Sources */,
+				2E491D4530615BCF00770758 /* Frameworks */,
+				2E491D4630615BCF00770758 /* Resources */,
+				2ED0010030615BD000770758 /* Embed ExtensionKit Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2ED1010030615BD000770758 /* PBXTargetDependency */,
+				2ED2010030615BD000770758 /* PBXTargetDependency */,
+				2ED3010030615BD000770758 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2E491D4A30615BCF00770758 /* ANProbe */,
+			);
+			name = ANProbe;
+			productName = ANProbe;
+			productReference = 2E491D4830615BCF00770758 /* ANProbe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2EB1030030615BD000770758 /* ATSSecurity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EB1070030615BD000770758 /* Build configuration list for PBXNativeTarget "ATSSecurity" */;
+			buildPhases = (
+				2EB1040030615BD000770758 /* Sources */,
+				2EB1050030615BD000770758 /* Frameworks */,
+				2EB1060030615BD000770758 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				2EB1020030615BD000770758 /* ATSSecurity */,
+			);
+			name = ATSSecurity;
+			productName = ATSSecurity;
+			productReference = 2EB1010030615BD000770758 /* ATSSecurity.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+		2EB2030030615BD000770758 /* ATSTransport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EB2070030615BD000770758 /* Build configuration list for PBXNativeTarget "ATSTransport" */;
+			buildPhases = (
+				2EB2040030615BD000770758 /* Sources */,
+				2EB2050030615BD000770758 /* Frameworks */,
+				2EB2060030615BD000770758 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				2EB2020030615BD000770758 /* ATSTransport */,
+			);
+			name = ATSTransport;
+			productName = ATSTransport;
+			productReference = 2EB2010030615BD000770758 /* ATSTransport.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+		2EB3030030615BD000770758 /* ATSDataProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EB3070030615BD000770758 /* Build configuration list for PBXNativeTarget "ATSDataProvider" */;
+			buildPhases = (
+				2EB3040030615BD000770758 /* Sources */,
+				2EB3050030615BD000770758 /* Frameworks */,
+				2EB3060030615BD000770758 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				2EB3020030615BD000770758 /* ATSDataProvider */,
+			);
+			name = ATSDataProvider;
+			productName = ATSDataProvider;
+			productReference = 2EB3010030615BD000770758 /* ATSDataProvider.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E491D4030615BCF00770758 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2710;
+				LastUpgradeCheck = 2710;
+				TargetAttributes = {
+					2E491D4730615BCF00770758 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					2EB1030030615BD000770758 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					2EB2030030615BD000770758 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					2EB3030030615BD000770758 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+				};
+			};
+			buildConfigurationList = 2E491D4330615BCF00770758 /* Build configuration list for PBXProject "ANProbe" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E491D3F30615BCF00770758;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2E491D4930615BCF00770758 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E491D4730615BCF00770758 /* ANProbe */,
+				2EB1030030615BD000770758 /* ATSSecurity */,
+				2EB2030030615BD000770758 /* ATSTransport */,
+				2EB3030030615BD000770758 /* ATSDataProvider */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E491D4630615BCF00770758 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		2EB1060030615BD000770758 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		2EB2060030615BD000770758 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		2EB3060030615BD000770758 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E491D4430615BCF00770758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		2EB1040030615BD000770758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		2EB2040030615BD000770758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		2EB3040030615BD000770758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2ED1010030615BD000770758 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EB1030030615BD000770758 /* ATSSecurity */;
+			targetProxy = 2ED1020030615BD000770758 /* PBXContainerItemProxy */;
+		};
+		2ED2010030615BD000770758 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EB2030030615BD000770758 /* ATSTransport */;
+			targetProxy = 2ED2020030615BD000770758 /* PBXContainerItemProxy */;
+		};
+		2ED3010030615BD000770758 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EB3030030615BD000770758 /* ATSDataProvider */;
+			targetProxy = 2ED3020030615BD000770758 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2E491D5130615BD000770758 /* Debug configuration for PBXProject "ANProbe" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E491D5230615BD000770758 /* Release configuration for PBXProject "ANProbe" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2E491D5430615BD000770758 /* Debug configuration for PBXNativeTarget "ANProbe" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ANProbe/ANProbe.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ANProbe/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 27.0;
+			};
+			name = Debug;
+		};
+		2E491D5530615BD000770758 /* Release configuration for PBXNativeTarget "ANProbe" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ANProbe/ANProbe.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ANProbe/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 27.0;
+			};
+			name = Release;
+		};
+		2EB1080030615BD000770758 /* Debug configuration for PBXNativeTarget "ATSSecurity" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ATSSecurity/ATSSecurity.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATSSecurity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ATSSecurity;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe.ATSSecurity";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EB1090030615BD000770758 /* Release configuration for PBXNativeTarget "ATSSecurity" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ATSSecurity/ATSSecurity.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATSSecurity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ATSSecurity;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe.ATSSecurity";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2EB2080030615BD000770758 /* Debug configuration for PBXNativeTarget "ATSTransport" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ATSTransport/ATSTransport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATSTransport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ATSTransport;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe.ATSTransport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EB2090030615BD000770758 /* Release configuration for PBXNativeTarget "ATSTransport" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ATSTransport/ATSTransport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATSTransport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ATSTransport;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe.ATSTransport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2EB3080030615BD000770758 /* Debug configuration for PBXNativeTarget "ATSDataProvider" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ATSDataProvider/ATSDataProvider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATSDataProvider/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ATSDataProvider;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe.ATSDataProvider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EB3090030615BD000770758 /* Release configuration for PBXNativeTarget "ATSDataProvider" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ATSDataProvider/ATSDataProvider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ATSDataProvider/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ATSDataProvider;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.anprobe.ANProbe.ATSDataProvider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E491D4330615BCF00770758 /* Build configuration list for PBXProject "ANProbe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E491D5130615BD000770758 /* Debug configuration for PBXProject "ANProbe" */,
+				2E491D5230615BD000770758 /* Release configuration for PBXProject "ANProbe" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		2E491D5330615BD000770758 /* Build configuration list for PBXNativeTarget "ANProbe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E491D5430615BD000770758 /* Debug configuration for PBXNativeTarget "ANProbe" */,
+				2E491D5530615BD000770758 /* Release configuration for PBXNativeTarget "ANProbe" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		2EB1070030615BD000770758 /* Build configuration list for PBXNativeTarget "ATSSecurity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EB1080030615BD000770758 /* Debug configuration for PBXNativeTarget "ATSSecurity" */,
+				2EB1090030615BD000770758 /* Release configuration for PBXNativeTarget "ATSSecurity" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		2EB2070030615BD000770758 /* Build configuration list for PBXNativeTarget "ATSTransport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EB2080030615BD000770758 /* Debug configuration for PBXNativeTarget "ATSTransport" */,
+				2EB2090030615BD000770758 /* Release configuration for PBXNativeTarget "ATSTransport" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		2EB3070030615BD000770758 /* Build configuration list for PBXNativeTarget "ATSDataProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EB3080030615BD000770758 /* Debug configuration for PBXNativeTarget "ATSDataProvider" */,
+				2EB3090030615BD000770758 /* Release configuration for PBXNativeTarget "ATSDataProvider" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E491D4030615BCF00770758 /* Project object */;
+	validationLevel = 1;
+}
