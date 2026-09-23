@@ -49,6 +49,11 @@ final class PebbleBLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate,
     ask.activate(on: .main) { _ in }
   }
 
+  /// Max bytes a single ATT write to RX can carry (used to size DATA fragments).
+  var maxWriteLen: Int {
+    peripheral?.maximumWriteValueLength(for: .withResponse) ?? 20
+  }
+
   func write(_ frame: Data) {
     DispatchQueue.main.async { [self] in
       queue.append(frame)
@@ -125,12 +130,23 @@ final class ATSTransportHandler: AccessoryTransportSession.EventHandler {
   func messageReceived(_ message: TransportMessage,
                        completion: @escaping @Sendable (AccessoryMessage.Result) -> Void) {
     let sid = Data(message.sessionID.uuidString.utf8)
-    // DATA frame = 0x03 | u8 sid_len | sid | wire(nonce|ct|tag). The wire is
-    // already-encrypted notification content — never logged.
-    var frame = Data([0x03])
-    frame.append(UInt8(sid.count)); frame += sid; frame += message.data
-    atxLog.log("forwarding encrypted notification to accessory (\(frame.count, privacy: .public) B)")
-    transportBLE.write(frame)
+    // Logical DATA frame = u8 sid_len | sid | wire(nonce|ct|tag). The wire is
+    // already-encrypted notification content — never logged. It can exceed one ATT
+    // write, so fragment it across writes as 0x03 | more_flag | chunk (more_flag 1
+    // while more follows); the watch reassembles it. Symmetric to the watch's reply.
+    var logical = Data()
+    logical.append(UInt8(sid.count)); logical += sid; logical += message.data
+    let chunkCap = max(1, transportBLE.maxWriteLen - 2)  // minus type + more_flag
+    var offset = 0
+    while offset < logical.count {
+      let n = min(chunkCap, logical.count - offset)
+      let more: UInt8 = (offset + n < logical.count) ? 1 : 0
+      var frame = Data([0x03, more])
+      frame += logical.subdata(in: (logical.startIndex + offset)..<(logical.startIndex + offset + n))
+      transportBLE.write(frame)
+      offset += n
+    }
+    atxLog.log("forwarding encrypted notification to accessory (\(logical.count, privacy: .public) B, \((logical.count + chunkCap - 1) / chunkCap, privacy: .public) frag)")
     completion(.success)
   }
 
