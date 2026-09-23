@@ -4,7 +4,7 @@ import AccessoryTransportExtension
 import Foundation
 import OSLog
 
-// AccessoryTransportSecurity (KeyExchange) extension for #29, direct-BLE
+// AccessoryTransportSecurity (KeyExchange) extension, direct-BLE
 // design (per shinvou/NotifBridge): this extension does its own Bluetooth I/O to
 // the watch. It reads the WATCH's real P-256 public key over BLE (the watch is the
 // HPKE recipient and holds its private key), relays it to iOS as the accessory

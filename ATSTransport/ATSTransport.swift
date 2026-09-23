@@ -5,7 +5,7 @@ import ExtensionFoundation
 import Foundation
 import OSLog
 
-// AccessoryTransportAppExtension (#29). Apple's design is that the
+// AccessoryTransportAppExtension. Apple's design is that the
 // transport extension does its own BLE I/O to the accessory — allowed in this
 // sandbox once the Info.plist declares NSAccessorySetupKitSupports /
 // NSAccessorySetupBluetoothServices / NSAccessorySetupBluetoothNames and the

@@ -5,12 +5,12 @@ import AccessoryNotifications
 import CoreBluetooth
 
 /// Companion app for forwarding iOS notifications to a Pebble via Apple's
-/// AccessoryNotifications (#29). This app owns only pairing +
+/// AccessoryNotifications. This app owns only pairing +
 /// forwarding authorization (AccessorySetupKit); the notification data path runs
 /// in the three app extensions, which talk to the watch over Bluetooth
-/// themselves. It is a SEPARATE app from the main Pebble app on purpose: an
-/// AccessorySetupKit app cannot create a CBPeripheralManager, which the main app
-/// needs for its phone-side GATT server (#47).
+/// themselves. It is a standalone companion on purpose: an AccessorySetupKit app
+/// cannot create a CBPeripheralManager, so anything that needs a phone-side GATT
+/// server has to live in a separate app.
 @MainActor
 @Observable
 final class ForwardingModel: NSObject {

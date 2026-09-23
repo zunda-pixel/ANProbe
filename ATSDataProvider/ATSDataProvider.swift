@@ -6,7 +6,7 @@ import OSLog
 
 // AccessoryDataProvider providing the NotificationsForwarding feature, wired per
 // Apple's "Receiving iOS notifications on an accessory" article. Doubles as an
-// OBSERVATION INSTRUMENT (#29): logs every handler callback with
+// OBSERVATION INSTRUMENT: logs every handler callback with
 // .public so we can see the forwarding lifecycle on the device console
 // (subsystem com.example.anprobe.ANProbe.ATSDataProvider).
 
