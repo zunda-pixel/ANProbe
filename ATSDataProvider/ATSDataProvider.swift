@@ -3,7 +3,6 @@ import AccessoryTransportExtension
 import ExtensionFoundation
 import Foundation
 import OSLog
-import UserNotifications
 
 // AccessoryDataProvider providing the NotificationsForwarding feature, wired per
 // Apple's "Receiving iOS notifications on an accessory" article. Doubles as an
@@ -137,12 +136,18 @@ enum NotificationWire {
     tlv(0x05, n.identifier.notificationIdentifier)
     out.append(0x06); out.append(1); out.append(alert ? 1 : 0)
     // Actions (up to 4): the watch shows them and replies with the chosen id. A
-    // text-input action gets flag bit 0 set, so the watch collects a reply and
-    // sends it back as the response's user text.
+    // text-input action (ActionType.textInput) gets flag bit 0 set, so the watch
+    // collects a reply and sends it back as the response's user text. An action
+    // whose title is empty can't be rendered as a menu row — skip it so the watch
+    // never shows a blank, unselectable line.
     for action in n.actions.prefix(4) {
-      let flags: UInt8 = (action is UNTextInputNotificationAction) ? 0x01 : 0x00
+      let titleStr = action.title ?? ""
+      guard !titleStr.isEmpty else { continue }
+      let isTextInput: Bool
+      if case .textInput = action.type { isTextInput = true } else { isTextInput = false }
+      let flags: UInt8 = isTextInput ? 0x01 : 0x00
       let aid = Data(action.identifier.utf8.prefix(120))
-      let title = Data((action.title ?? "").utf8.prefix(120))
+      let title = Data(titleStr.utf8.prefix(120))
       var entry = Data()
       entry.append(flags)
       entry.append(UInt8(aid.count)); entry += aid
