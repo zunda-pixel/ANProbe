@@ -151,13 +151,24 @@ struct ATSTransportExtension: AccessoryTransportAppExtension {
     -> AccessoryTransportSession.Request.Decision {
     atxLog.log("transport session request; accepting (direct-BLE).")
     let session = sessionRequest.session
-    // Watch -> phone reply: 0x82 | u8 sid_len | sid | wire → TransportMessage.
+    // Watch -> phone reply, fragmented across notifications so it can exceed the
+    // ATT MTU: each frame is 0x82 | more_flag | chunk, more_flag == 1 while further
+    // fragments follow and 0 on the last. Reassemble the chunks back into
+    // sid_len | sid | wire, then hand it to the data provider.
+    var acc = Data()
     transportBLE.onTXNotify = { data in
       guard data.first == 0x82, data.count >= 2 else { return }
-      let sidLen = Int(data[data.index(data.startIndex, offsetBy: 1)])
-      guard data.count >= 2 + sidLen else { return }
-      let sidData = data.subdata(in: (data.startIndex + 2)..<(data.startIndex + 2 + sidLen))
-      let wire = data.subdata(in: (data.startIndex + 2 + sidLen)..<data.endIndex)
+      let more = data[data.index(data.startIndex, offsetBy: 1)] != 0
+      acc.append(data.subdata(in: (data.startIndex + 2)..<data.endIndex))
+      if acc.count > 4096 { acc = Data(); return }  // runaway guard
+      if more { return }
+      let full = acc
+      acc = Data()
+      guard full.count >= 1 else { return }
+      let sidLen = Int(full[full.startIndex])
+      guard full.count >= 1 + sidLen else { return }
+      let sidData = full.subdata(in: (full.startIndex + 1)..<(full.startIndex + 1 + sidLen))
+      let wire = full.subdata(in: (full.startIndex + 1 + sidLen)..<full.endIndex)
       guard let sidStr = String(data: sidData, encoding: .utf8),
             let sessionID = UUID(uuidString: sidStr) else { return }
       do {
