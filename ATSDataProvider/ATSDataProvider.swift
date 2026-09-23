@@ -3,6 +3,7 @@ import AccessoryTransportExtension
 import ExtensionFoundation
 import Foundation
 import OSLog
+import UserNotifications
 
 // AccessoryDataProvider providing the NotificationsForwarding feature, wired per
 // Apple's "Receiving iOS notifications on an accessory" article. Doubles as an
@@ -75,7 +76,10 @@ final class NotificationHandler: NotificationsForwarding.AccessoryNotificationsH
 
   func messageHandler(_ message: TransportMessage) {
     // Accessory→host reply from a watch notification action, decrypted by iOS from
-    // the watch's AccessoryToHost seal. Wire = u8 nid_len | nid | u8 aid_len | aid.
+    // the watch's AccessoryToHost seal. Wire =
+    //   u8 nid_len | nid | u8 aid_len | aid | u16 text_len (LE) | text
+    // text is present (possibly empty) for a text-input action, absent for a plain
+    // one; empty or absent means no user text.
     let d = [UInt8](message.data)
     guard d.count >= 2 else { return }
     var o = 0
@@ -84,12 +88,19 @@ final class NotificationHandler: NotificationsForwarding.AccessoryNotificationsH
     let nid = String(decoding: d[o..<o + nidLen], as: UTF8.self); o += nidLen
     let aidLen = Int(d[o]); o += 1
     guard o + aidLen <= d.count else { return }
-    let aid = String(decoding: d[o..<o + aidLen], as: UTF8.self)
+    let aid = String(decoding: d[o..<o + aidLen], as: UTF8.self); o += aidLen
+    var userText: String? = nil
+    if o + 2 <= d.count {
+      let textLen = Int(d[o]) | (Int(d[o + 1]) << 8); o += 2
+      if textLen > 0, o + textLen <= d.count {
+        userText = String(decoding: d[o..<o + textLen], as: UTF8.self)
+      }
+    }
     let source = sourceByNotifId[nid] ?? ""
-    adpLog.log("action reply: notif=\(nid, privacy: .private) action=\(aid, privacy: .public)")
+    adpLog.log("action reply: notif=\(nid, privacy: .private) action=\(aid, privacy: .public) hasText=\(userText != nil)")
     guard let session else { return }
     let response = NotificationResponse(sourceIdentifier: source, notificationIdentifier: nid,
-                                        actionIdentifier: aid, userText: nil)
+                                        actionIdentifier: aid, userText: userText)
     Task {
       do { try await session.sendResponse(response); adpLog.log("sendResponse OK") }
       catch { adpLog.log("sendResponse failed: \(String(describing: error), privacy: .public)") }
@@ -108,7 +119,8 @@ final class NotificationHandler: NotificationsForwarding.AccessoryNotificationsH
 //!   TLV (present/update): tag(u8) len(u8) value(UTF-8, truncated to 255)
 //!     tags: 0x01 title, 0x02 subtitle, 0x03 body, 0x04 source, 0x05 identifier,
 //!           0x06 alert(1 byte: 0/1),
-//!           0x07 action = [u8 aid_len | aid | u8 title_len | title]
+//!           0x07 action = [u8 flags | u8 aid_len | aid | u8 title_len | title]
+//!             flags bit 0 = text-input action (watch collects reply text)
 //!   remove-one payload: the identifier UTF-8 (after the msgType byte).
 enum NotificationWire {
   static func serialize(_ n: AccessoryNotification, alert: Bool) -> Data {
@@ -124,11 +136,15 @@ enum NotificationWire {
     tlv(0x04, n.sourceName)
     tlv(0x05, n.identifier.notificationIdentifier)
     out.append(0x06); out.append(1); out.append(alert ? 1 : 0)
-    // Actions (up to 4): the watch shows them and replies with the chosen id.
+    // Actions (up to 4): the watch shows them and replies with the chosen id. A
+    // text-input action gets flag bit 0 set, so the watch collects a reply and
+    // sends it back as the response's user text.
     for action in n.actions.prefix(4) {
+      let flags: UInt8 = (action is UNTextInputNotificationAction) ? 0x01 : 0x00
       let aid = Data(action.identifier.utf8.prefix(120))
       let title = Data((action.title ?? "").utf8.prefix(120))
       var entry = Data()
+      entry.append(flags)
       entry.append(UInt8(aid.count)); entry += aid
       entry.append(UInt8(title.count)); entry += title
       out.append(0x07); out.append(UInt8(entry.count)); out += entry
