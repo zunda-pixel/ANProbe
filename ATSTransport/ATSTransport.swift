@@ -132,16 +132,19 @@ final class ATSTransportHandler: AccessoryTransportSession.EventHandler {
     let sid = Data(message.sessionID.uuidString.utf8)
     // Logical DATA frame = u8 sid_len | sid | wire(nonce|ct|tag). The wire is
     // already-encrypted notification content — never logged. It can exceed one ATT
-    // write, so fragment it across writes as 0x03 | more_flag | chunk (more_flag 1
-    // while more follows); the watch reassembles it. Symmetric to the watch's reply.
+    // write, so fragment it across writes as 0x03 | flags | chunk, where
+    // flags = MORE(0x01, while more follows) | FIRST(0x02, first fragment). The watch
+    // resets its reassembly buffer on FIRST and processes on !MORE.
     var logical = Data()
     logical.append(UInt8(sid.count)); logical += sid; logical += message.data
-    let chunkCap = max(1, transportBLE.maxWriteLen - 2)  // minus type + more_flag
+    let chunkCap = max(1, transportBLE.maxWriteLen - 2)  // minus type + flags
     var offset = 0
     while offset < logical.count {
       let n = min(chunkCap, logical.count - offset)
-      let more: UInt8 = (offset + n < logical.count) ? 1 : 0
-      var frame = Data([0x03, more])
+      var flags: UInt8 = 0
+      if offset + n < logical.count { flags |= 0x01 }  // MORE
+      if offset == 0 { flags |= 0x02 }                 // FIRST
+      var frame = Data([0x03, flags])
       frame += logical.subdata(in: (logical.startIndex + offset)..<(logical.startIndex + offset + n))
       transportBLE.write(frame)
       offset += n
@@ -174,7 +177,10 @@ struct ATSTransportExtension: AccessoryTransportAppExtension {
     var acc = Data()
     transportBLE.onTXNotify = { data in
       guard data.first == 0x82, data.count >= 2 else { return }
-      let more = data[data.index(data.startIndex, offsetBy: 1)] != 0
+      let flags = data[data.index(data.startIndex, offsetBy: 1)]
+      let more = (flags & 0x01) != 0
+      let first = (flags & 0x02) != 0
+      if first { acc = Data() }  // reset on the first fragment (peer may have restarted)
       acc.append(data.subdata(in: (data.startIndex + 2)..<data.endIndex))
       if acc.count > 4096 { acc = Data(); return }  // runaway guard
       if more { return }
